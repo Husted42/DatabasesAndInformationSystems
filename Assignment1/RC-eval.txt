@@ -1,16 +1,18 @@
-What PC models have a ram of 512 MB?
+a) What PC models have a ram of 512 MB?
 EXISTS speed, hd, price. 
 PC(model, speed, 512, hd, price)
 
-Find the makers, model numbers, and prices of all offered devices.
+d) Find the makers, model numbers, and prices of all offered devices.
 EXISTS type. Product(maker, model, type) AND
 EXISTS speed, ram, hd. PC(model, speed, ram, hd, price) OR
 EXISTS speed, ram, hd, screen. Laptop(model, speed, ram, hd, screen, price) OR
 EXISTS color, type. Printer(model, color, type, price)
 
-Find those screen sizes that occur in two or more laptops.
+g) Find those screen sizes that occur in two or more laptops.
 EXISTS ssn1, ssn2, lot1, lot2.
 Employees(ssn1, name1, lot1) AND
 Employees(ssn2, name2, lot2) AND
 lot1 = lot2 AND NOT ssn1 = ssn2
 
+j) Find those makers that manufacture every type of printer. Do not rely on the fact that there are only
+two types of printers in the given instance
