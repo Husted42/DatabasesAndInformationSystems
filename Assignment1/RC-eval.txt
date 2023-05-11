@@ -16,3 +16,15 @@ screen1 = screen2 AND NOT model1 = model2
 
 j) Find those makers that manufacture every type of printer. Do not rely on the fact that there are only
 two types of printers in the given instance
+
+maker / produkt
+EXISTS type, price. Product(maker, model, type) AND
+EXISTS speed, ram, hd. PC(model, speed, ram, hd, price) OR
+EXISTS speed, ram, hd, screen. Laptop(model, speed, ram, hd, screen, price) OR
+EXISTS color, type. Printer(model, color, type, price)
+
+Printer models
+EXISTS type, color, price. Printer(model, color, type, price)
+
+#Reviews ?
+Printer(model, color, type, price)
