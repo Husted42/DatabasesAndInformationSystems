@@ -1,0 +1,53 @@
+a) What PC models have a ram of 512 MB?
+EXISTS speed, hd, price. 
+PC(model, speed, 512, hd, price)
+
+
+b) Which manufacturers make laptops with a screen size of 15”?
+EXISTS speed, ram, hd, screen, model, price, type. Product(maker, model, type) AND
+Laptop(model, speed, ram, hd, screen, price) 
+
+
+c)Find the model number and price of all products (of any type) made by manufacturer E
+EXISTS type. Product("E", model, type) AND
+((EXISTS speed, ram, hd. PC(model, speed, ram, hd, price))
+OR
+EXISTS speed, ram, hd, screen. Laptop(model, speed, ram, hd, screen, price)
+OR
+(EXISTS color, type. Printer(model, color, type, price)))
+
+
+d) Find the makers, model numbers, and prices of all offered devices.
+EXISTS type. Product(maker, model, type) AND
+EXISTS speed, ram, hd. PC(model, speed, ram, hd, price) OR
+EXISTS speed, ram, hd, screen. Laptop(model, speed, ram, hd, screen, price) OR
+EXISTS color, type. Printer(model, color, type, price)
+
+
+e)Find the model numbers of all color laser printers that are not made by manufacturer E.
+EXISTS type, color, price. Product(maker, model, type) AND
+NOT (maker = "E") AND
+Printer(model, color, "laser", price)
+
+
+f)Find those manufacturers that sell PCs, but not Printers. Do not rely on the correctness of the “type” column in Product for this query
+(EXISTS type, speed, ram, hd, model, price. 
+Product(maker, model, type) AND
+PC(model, speed, ram, hd, price)) 
+AND NOT
+(EXISTS type, color, price, typep, model. 
+Product(maker, model, type) AND
+Printer(model, color, typep, price))
+
+
+g) Find those screen sizes that occur in two or more laptops.
+EXISTS screen1, model1, model2, speed1, speed2, ram1, ram2, hd1, hd2, price1, price2. 
+Laptop(model1, speed1, ram1, hd1, screen1, price1) AND
+Laptop(model2, speed2, ram2, hd2, screen2, price2) AND
+screen1 = screen2 AND NOT model1 = model2
+
+
+h)Find the manufacturers of Laptops with at least three different hard disk sizes.
+
+j) Find those makers that manufacture every type of printer. Do not rely on the fact that there are only two types of printers in the given instance
+
