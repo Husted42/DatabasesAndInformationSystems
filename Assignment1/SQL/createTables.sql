@@ -7,6 +7,7 @@ DROP TABLE Cuisine CASCADE;
 DROP TABLE TakeOut CASCADE;
 DROP TABLE Delivery CASCADE;
 DROP TABLE Ratings CASCADE;
+DROP TABLE Ratings2 CASCADE;
 DROP TABLE ComposedOf CASCADE;
 
 CREATE TABLE Restaurants(
@@ -14,7 +15,8 @@ CREATE TABLE Restaurants(
 	name CHAR(20),
 	location VARCHAR(30),
 	date_created DATE,
-	speciality CHAR(20), 
+	speciality CHAR(20),
+	f_courier INT,
 	password VARCHAR(20),
 	PRIMARY KEY (restaurant_id)
 );
@@ -24,6 +26,7 @@ CREATE TABLE Customer(
 	name CHAR(20),
 	date_created DATE,
 	password VARCHAR(20),
+	location VARCHAR(20),
 	f_cuisine CHAR(20),
 	f_courier INT,
 	f_restaurant INT,
@@ -61,13 +64,13 @@ CREATE TABLE TakeOut(
 CREATE TABLE Delivery(
 	delivery_id SERIAL,
 	c_accepted_by INTEGER,
-	location VARCHAR(20), 
 -- 	orders_id INTEGER, 
 	PRIMARY KEY (delivery_id)
 );
 
 CREATE TABLE Orders(
 	orders_id SERIAL, 
+	ordered_by INT,
 	takeout_id INTEGER, 
 	delivery_id INTEGER, 
 	PRIMARY KEY (orders_id)
@@ -78,6 +81,13 @@ CREATE TABLE Ratings(
 	restaurant INTEGER,
 	rating INTEGER,
 	PRIMARY KEY (customer, restaurant)
+);
+
+CREATE TABLE Ratings2(
+	customer INTEGER,
+	courier INTEGER,
+	rating INTEGER,
+	PRIMARY KEY (customer, courier)
 );
 
 CREATE TABLE ComposedOf(
@@ -93,9 +103,15 @@ CREATE TABLE ComposedOf(
 ALTER TABLE Restaurants ADD FOREIGN KEY (speciality) REFERENCES Cuisine(name);
 ALTER TABLE Ratings ADD FOREIGN KEY (restaurant) REFERENCES Restaurants(restaurant_id);
 ALTER TABLE Ratings ADD FOREIGN KEY (customer) REFERENCES Customer(customer_id);
+
+ALTER TABLE Ratings2 ADD FOREIGN KEY (courier) REFERENCES Couriers(couriers_id );
+ALTER TABLE Ratings2 ADD FOREIGN KEY (customer) REFERENCES Customer(customer_id);
+
 ALTER TABLE Customer ADD FOREIGN KEY (f_cuisine) REFERENCES Cuisine(name);
 ALTER TABLE Customer ADD FOREIGN KEY (f_courier) REFERENCES Couriers(couriers_id);
 ALTER TABLE Couriers ADD FOREIGN KEY (f_restaurant) REFERENCES Restaurants(restaurant_id);
+ALTER TABLE Restaurants ADD FOREIGN KEY (f_courier) REFERENCES Couriers(couriers_id);
+
 ALTER TABLE Dishes ADD FOREIGN KEY (cooked_by) REFERENCES Restaurants(restaurant_id);
 ALTER TABLE Customer ADD FOREIGN KEY (f_restaurant) REFERENCES Restaurants(restaurant_id);
 
@@ -110,6 +126,6 @@ ALTER TABLE Delivery ADD FOREIGN KEY (c_accepted_by) REFERENCES Couriers(courier
 
 ALTER TABLE Orders ADD FOREIGN KEY (delivery_id) REFERENCES Delivery(delivery_id);
 ALTER TABLE Orders ADD FOREIGN KEY (takeout_id) REFERENCES Takeout(takeout_id);
-
+ALTER TABLE Orders ADD FOREIGN KEY (ordered_by) REFERENCES Customer(customer_id);
 
 

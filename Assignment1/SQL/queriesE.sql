@@ -17,3 +17,4 @@ SELECT f_courier FROM Restaurants WHERE f_courier IN(
 	SELECT courier FROM Ratings2 WHERE rating = 1
 );
 
+-- Which customers gave a poor rating to all involved parties in a united order?
