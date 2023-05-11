@@ -10,7 +10,7 @@ DROP TABLE Ratings CASCADE;
 DROP TABLE ComposedOf CASCADE;
 
 CREATE TABLE Restaurants(
-	restaurant_id INTEGER,
+	restaurant_id SERIAL,
 	name CHAR(20),
 	location VARCHAR(30),
 	date_created DATE,
@@ -20,17 +20,18 @@ CREATE TABLE Restaurants(
 );
 
 CREATE TABLE Customer(
-	customer_id INTEGER,
+	customer_id SERIAL,
 	name CHAR(20),
 	date_created DATE,
 	password VARCHAR(20),
 	f_cuisine CHAR(20),
 	f_courier INT,
+	f_restaurant INT,
 	PRIMARY KEY (customer_id)
 );
 
 CREATE TABLE Couriers(
-	couriers_id INTEGER,
+	couriers_id SERIAL,
 	name CHAR(20),
 	date_created DATE,
 	password VARCHAR(20),
@@ -39,7 +40,7 @@ CREATE TABLE Couriers(
 );
 
 CREATE TABLE Dishes(
-	dishes_id INTEGER,
+	dishes_id SERIAL,
 	name CHAR(20),
 	prices INTEGER,
 	cooked_by INTEGER,
@@ -52,13 +53,13 @@ CREATE TABLE Cuisine(
 );
 
 CREATE TABLE TakeOut(
-	takeout_id INTEGER,
+	takeout_id SERIAL,
 -- 	orders_id  INTEGER,
 	PRIMARY KEY (takeout_id)
 );
 	
 CREATE TABLE Delivery(
-	delivery_id INTEGER,
+	delivery_id SERIAL,
 	c_accepted_by INTEGER,
 	location VARCHAR(20), 
 -- 	orders_id INTEGER, 
@@ -66,7 +67,7 @@ CREATE TABLE Delivery(
 );
 
 CREATE TABLE Orders(
-	orders_id INTEGER, 
+	orders_id SERIAL, 
 	takeout_id INTEGER, 
 	delivery_id INTEGER, 
 	PRIMARY KEY (orders_id)
@@ -96,6 +97,7 @@ ALTER TABLE Customer ADD FOREIGN KEY (f_cuisine) REFERENCES Cuisine(name);
 ALTER TABLE Customer ADD FOREIGN KEY (f_courier) REFERENCES Couriers(couriers_id);
 ALTER TABLE Couriers ADD FOREIGN KEY (f_restaurant) REFERENCES Restaurants(restaurant_id);
 ALTER TABLE Dishes ADD FOREIGN KEY (cooked_by) REFERENCES Restaurants(restaurant_id);
+ALTER TABLE Customer ADD FOREIGN KEY (f_restaurant) REFERENCES Restaurants(restaurant_id);
 
 -- Orders are composed of a maximum of 5 dishes
 ALTER TABLE ComposedOf ADD FOREIGN KEY (dish1) REFERENCES Dishes(dishes_id); 
