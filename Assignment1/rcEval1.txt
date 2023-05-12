@@ -10,3 +10,21 @@ AND
 Dishes(dishes_id, name, prices, cooked_by) 
 AND cooked_by = restaurant_id)
 
+-- Which restaurants have been tagged as favorites and have received a poor rating from the same customer?
+(EXISTS customer_id, customer, f_restaurant.
+(EXISTS name, date_created, password, location, f_cuisine, f_courier.
+Customer(customer_id, name, date_created, password, location, f_cuisine, f_courier, f_restaurant))
+AND
+Ratings(customer, restaurant, 1)
+AND customer_id = customer)
+
+-- Which couriers have been tagged as favorites by some restaurant and have received a poor rating from some customer?
+EXISTS f_courier.
+(EXISTS restaurant_id, name, location, date_created, speciality, password.
+Restaurants(restaurant_id, name, location, date_created, speciality, f_courier, password)
+AND
+EXISTS customer.
+Ratings2(customer, courier, 1)
+AND 
+courier = f_courier)
+

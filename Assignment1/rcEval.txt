@@ -66,5 +66,8 @@ AND NOT hd1=hd2
 AND NOT hd1=hd3
 AND NOT hd2=hd3
 
+i)
+
+
 j) Find those makers that manufacture every type of printer. Do not rely on the fact that there are only two types of printers in the given instance
 

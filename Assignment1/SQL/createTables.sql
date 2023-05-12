@@ -102,7 +102,7 @@ ALTER TABLE Restaurants ADD FOREIGN KEY (speciality) REFERENCES Cuisine(name);
 ALTER TABLE Ratings ADD FOREIGN KEY (restaurant) REFERENCES Restaurants(restaurant_id);
 ALTER TABLE Ratings ADD FOREIGN KEY (customer) REFERENCES Customer(customer_id);
 
-ALTER TABLE Ratings2 ADD FOREIGN KEY (courier) REFERENCES Couriers(couriers_id );
+ALTER TABLE Ratings2 ADD FOREIGN KEY (courier) REFERENCES Couriers(couriers_id);
 ALTER TABLE Ratings2 ADD FOREIGN KEY (customer) REFERENCES Customer(customer_id);
 
 ALTER TABLE Customer ADD FOREIGN KEY (f_cuisine) REFERENCES Cuisine(name);
