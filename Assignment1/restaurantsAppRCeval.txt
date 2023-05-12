@@ -74,10 +74,3 @@ ComposedOf(orders_id, dish1, dish2, dish3, dish4, dish5)
 (1, 8, 1, 0, 0, 0)
 (2, 7, 8, 2, 2 0)
 (3, 5, 11, 0, 0, 0)
-
-
-
-
-
-
-
