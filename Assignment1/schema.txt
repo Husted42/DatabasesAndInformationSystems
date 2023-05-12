@@ -7,4 +7,4 @@ Delivery(delivery_id:int, c_accepted_by:int)
 Orders(orders_id:int, ordered_by:int, takeout_id:int, delivery_id:int)
 Ratings(customer:int, restaurant:int, rating:int)
 Ratings2(customer:int, courier:int, rating:int)
-ComposedOf(orders_id:int, dish1:int, dish2:int, dish3:int, dish4:int, dish5:int).
+ComposedOf(orders_id:int, dish1:int, dish2:int, dish3:int, dish4:int, dish5:int)
