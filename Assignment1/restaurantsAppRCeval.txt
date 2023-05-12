@@ -4,7 +4,7 @@ Restaurants
 (2, 'Mæxico', 'Østerbro', 20160202, 'Mexican', 1, 'zxcv')
 (3, 'tavola calda', 'Hellerup', 20160202, 'Italian', 2, 'qwerty')
 (4, 'Babas', 'Østerbro', 20200403, 'Italian', 5, 'jkl')
-(5, 'Glade Gris', 'Hellerup', 20200403, 'Danish', 5. 'jkl')
+(5, 'Glade Gris', 'Hellerup', 20200403, 'Danish', 5, 'jkl')
 
 Customer(customer_id, name, date_created, password, location, f_cuisine, f_courier, f_restaurant)
 Customer
