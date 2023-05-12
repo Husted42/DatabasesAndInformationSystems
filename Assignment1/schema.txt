@@ -1,5 +1,5 @@
 Restaurants(restaurant_id:int, name:string, location:string, date_created:int, speciality:string, f_courier:int, password:string)
-Customer(customer_id:int, name:string, date_created:int, password:string, location:string, f_cuisine:int, f_courier:int, f_restaurant:int)
+Customer(customer_id:int, name:string, date_created:int, password:string, location:string, f_cuisine:string, f_courier:int, f_restaurant:int)
 Couriers(couriers_id:int, name:string, date_created:int, password:string, f_restaurant:int)
 Dishes(dishes_id:int, name:string, prices:int, cooked_by:int)
 Cuisine(name:string)
