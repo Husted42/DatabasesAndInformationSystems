@@ -22,7 +22,7 @@ UPDATE Restaurants SET f_courier = 5 WHERE restaurant_id = 4;
 UPDATE Restaurants SET f_courier = 5 WHERE restaurant_id = 5;
 
 INSERT INTO Customer(name, date_created, password, location, f_cuisine, f_courier, f_restaurant) VALUES('Jens', '2020-04-03', 'password', 'Hellerup', 'Mexican', 1, 2);
-INSERT INTO Customer(name, date_created, password, location, f_cuisine, f_courier, f_restaurant) VALUES('Ole', '2020-04-03', 'password', 'Hellerup','Mexican', 2, 2);
+INSERT INTO Customer(name, date_created, password, location, f_cuisine, f_courier, f_restaurant) VALUES('Ole', '2020-04-03', 'password', 'Hellerup','Mexican', 2, 3);
 INSERT INTO Customer(name, date_created, password, location, f_cuisine, f_courier, f_restaurant) VALUES('Sky', '2020-04-03', 'password', 'Østerbro','Danish', 1, 5);
 INSERT INTO Customer(name, date_created, password, location, f_cuisine, f_courier, f_restaurant) VALUES('Anton', '2020-04-03', 'password', 'Østerbro', 'Italian', 2, 4);
 
@@ -50,13 +50,13 @@ INSERT INTO Ratings(customer, restaurant, rating) VALUES (1, 1, 2);
 INSERT INTO Ratings2(customer, courier, rating) VALUES (1, 1, 5);
 
 -- ##### Ole needs change, Mæxico and Green mango is not in the same city ##### --
--- ## Ole(2) orders Burrito(5) and guac(6) from mæxico(2) and forårsruller(2) and kyllingespyd(3) from Green mango(1) ##
+-- ## Ole(2) orders Caponra(7) and Lasange(8) from tavola calda(3) and forårsruller(2) and kyllingespyd(3) from Green mango(1) ##
 INSERT INTO Delivery(c_accepted_by) VALUES(1);
 INSERT INTO Orders(ordered_by, delivery_id) VALUES(2, 2);
-INSERT INTO ComposedOf(orders_id, dish1, dish2, dish3, dish4) VALUES (2, 5, 6, 2, 3);
+INSERT INTO ComposedOf(orders_id, dish1, dish2, dish3, dish4) VALUES (2, 7, 8, 2, 3);
 
--- ## Ole rates Mæxico(2) 1 and Green Mango (1) 2 // and courier (2-Ole) 1
-INSERT INTO Ratings(customer, restaurant, rating) VALUES (2, 2, 1);
+-- ## Ole rates Mæxico(2) 1 and Green Mango (1) 2 and courier (2-Ole) 1
+INSERT INTO Ratings(customer, restaurant, rating) VALUES (2, 3, 1);
 INSERT INTO Ratings(customer, restaurant, rating) VALUES (2, 1, 2);
 INSERT INTO Ratings2(customer, courier, rating) VALUES (2, 2, 1);
 

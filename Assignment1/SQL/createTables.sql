@@ -57,14 +57,12 @@ CREATE TABLE Cuisine(
 
 CREATE TABLE TakeOut(
 	takeout_id SERIAL,
--- 	orders_id  INTEGER,
 	PRIMARY KEY (takeout_id)
 );
 	
 CREATE TABLE Delivery(
 	delivery_id SERIAL,
-	c_accepted_by INTEGER,
--- 	orders_id INTEGER, 
+	c_accepted_by INTEGER, 
 	PRIMARY KEY (delivery_id)
 );
 

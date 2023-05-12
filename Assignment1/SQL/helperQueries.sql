@@ -1,4 +1,5 @@
 SELECT * FROM Restaurants;
+SELECT * FROM Customer;
 SELECT * FROM Ratings2;
 SELECT * FROM Dishes;
 SELECT * FROM orders;
