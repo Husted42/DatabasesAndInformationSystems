@@ -1,25 +1,25 @@
 Restaurants(restaurant_id, name, location, date_created, speciality, f_courier, password)
 Restaurants
-(1, 'Green Mango', 'Hellerup', '2014-02-02', 'Thai', 1, 'asdfg')
-(2, 'Mæxico', 'Østerbro', 2016-02-02, 'Mexican', 1, 'zxcv')
-(3, 'tavola calda', 'Hellerup', 2016-02-02, 'Italian', 2, 'qwerty')
-(4, 'Babas', 'Østerbro', 2020-04-03, 'Italian', 5, 'jkl')
-(5, 'Glade Gris', 'Hellerup', 2020-04-03, 'Danish', 5. 'jkl')
+(1, 'Green Mango', 'Hellerup', '20140202', 'Thai', 1, 'asdfg')
+(2, 'Mæxico', 'Østerbro', 20160202, 'Mexican', 1, 'zxcv')
+(3, 'tavola calda', 'Hellerup', 20160202, 'Italian', 2, 'qwerty')
+(4, 'Babas', 'Østerbro', 20200403, 'Italian', 5, 'jkl')
+(5, 'Glade Gris', 'Hellerup', 20200403, 'Danish', 5, 'jkl')
 
 Customer(customer_id, name, date_created, password, location, f_cuisine, f_courier, f_restaurant)
 Customer
-(1, 'Jens', 2020-04-03, 'password', 'Hellerup', 'Mexican', 1, 2)
-(2, 'Ole', 2020-04-03, 'password', 'Hellerup', 'Mexican', 2, 2)
-(3, 'Sky', 2020-04-03, 'password', 'Østerbro', 'Danish', 1, 5)
-(4, 'Anton', 2020-04-03, 'password', 'Østerbro', 'Italian', 2, 4)
+(1, 'Jens', 20200403, 'password', 'Hellerup', 'Mexican', 1, 2)
+(2, 'Ole', 20200403, 'password', 'Hellerup', 'Mexican', 2, 2)
+(3, 'Sky', 20200403, 'password', 'Østerbro', 'Danish', 1, 5)
+(4, 'Anton', 20200403, 'password', 'Østerbro', 'Italian', 2, 4)
 
 Couriers(couriers_id, name, date_created, password, f_restaurant)
 Couriers
-(1, 'Jacob', 2020-04-03, 'password', 1)
-(2, 'Ole', 2020-04-03, 'password', 1)
-(3, 'Bo', 2020-04-03, 'password', 3)
-(4, 'Tom', 2020-04-03, 'password', 2)
-(5, 'Arne', 2020-04-03, 'password', 3)
+(1, 'Jacob', 20200403, 'password', 1)
+(2, 'Ole', 20200403, 'password', 1)
+(3, 'Bo', 20200403, 'password', 3)
+(4, 'Tom', 20200403, 'password', 2)
+(5, 'Arne', 20200403, 'password', 3)
 
 Dishes(dishes_id, name, prices, cooked_by)
 Dishes
