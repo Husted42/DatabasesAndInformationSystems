@@ -8,7 +8,7 @@ Restaurants
 Customer
 (1, "Jens", 20200403, "password", "Hellerup", "Mexican", 1, 2)
 (2, "Ole", 20200403, "password", "Hellerup", "Mexican", 2, 2)
-(3, "Sky", 20200403, "password", "Østerbro", "Danish", 1, 5)h
+(3, "Sky", 20200403, "password", "Østerbro", "Danish", 1, 5)
 (4, "Anton", 20200403, "password", "Østerbro", "Italian", 2, 4)
 
 Couriers
