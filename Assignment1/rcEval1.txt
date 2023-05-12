@@ -1,0 +1,12 @@
+-- Which united orders are available for a given customer based on her/his location?
+-- Interpreted: Which dishes can a given costumer add to his order based on location?
+(EXISTS restaurant_id, dishes_id, prices, cooked_by. 
+((EXISTS location, name, date_created, speciality, f_courier, password. 
+(EXISTS name, date_created, password, f_cuisine, f_courier, f_restaurant.
+Customer(1, name, date_created, password, location, f_cuisine, f_courier, f_restaurant)) 
+AND 
+Restaurants(restaurant_id, name, location, date_created, speciality, f_courier, password))) 
+AND
+Dishes(dishes_id, name, prices, cooked_by) 
+AND cooked_by = restaurant_id)
+
