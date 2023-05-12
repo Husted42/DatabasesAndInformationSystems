@@ -67,7 +67,16 @@ AND NOT hd1=hd3
 AND NOT hd2=hd3
 
 i)
-
+EXISTS model1, type1, color, type2, price. Product(maker, model1, type1)
+AND 
+Printer(model1, color, type2, price)AND 
+EXISTS model2, type1, color, type2, price. Product(maker, model2, type1) AND 
+Printer(model2, color, type2, price) AND 
+EXISTS model3, type1, color, type2, price. Product(maker, model3, type1) AND
+Printer(model3, color, type2, price) AND
+NOT model1 = model2 AND
+NOT model2 = model3 AND
+NOT model3 = model1
 
 j) Find those makers that manufacture every type of printer. Do not rely on the fact that there are only two types of printers in the given instance
 
