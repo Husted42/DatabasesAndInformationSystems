@@ -1,0 +1,13 @@
+Exercise a)
+P⨝Q
+
+Exercise b)
+Q⨝R
+
+Exercise c)
+π x, y, z (P) ∪ π z, y, x (P)
+
+Exercise d)
+P ⨝ (π x (Q))
+
+Exercise e)

@@ -59,7 +59,7 @@ insert into PC values(1012, 2.80, 1024, 160, 649);
 insert into PC values(1013, 3.06, 512, 80, 529);
 
 insert into Laptop values(2001, 2.00, 2048, 240, 20.1, 3673);
-insert into Laptop values(2002, 1.73, 1024, 80, 17.0, 949);
+insert into Laptop values(2002, 1.20, 1024, 80, 17.0, 949); -- Speed changed
 insert into Laptop values(2003, 1.80, 512, 60, 15.4, 549);
 insert into Laptop values(2004, 2.00, 512, 60, 13.3, 1150);
 insert into Laptop values(2005, 2.16, 1024, 120, 17.0, 2500);
