@@ -53,9 +53,11 @@ notIN = π mo1 (faster)
 (π model PC) - (ρ model←mo1 (notIN))
 
 Exercise c) (Not Finished)
--- Find the makers, models, and prices of all offered devices.
-(π maker, model, price (Product ⨝ PC)) ∪
-(π maker, model, price (Product ⨝ Laptop)) 
+Devices = 
+	(π model, price (PC)) ∪ 
+	(π model, price (Laptop)) ∪ 
+	(π model, price (Printer))
+π maker, model, price (Product ⨝ Devices)
 
 Exercise d)
 x1 = Product ⨝ mo1 = model (ρ mo1 ← model (PC))
