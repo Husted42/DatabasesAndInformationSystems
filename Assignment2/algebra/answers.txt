@@ -31,6 +31,7 @@ Exercise b)
 EXISTS y, z. P(x,y,z) AND (x=y OR x=z)
 
 Exercise c)
+EXISTS y1. Q(x2, x1) AND (R(x1,y1) AND x1=y1)
 
 Ecercise d)
 EXISTS x, y, z. P(x,y,z) AND
@@ -53,11 +54,9 @@ notIN = π mo1 (faster)
 (π model PC) - (ρ model←mo1 (notIN))
 
 Exercise c) (Not Finished)
-Devices = 
-	(π model, price (PC)) ∪ 
-	(π model, price (Laptop)) ∪ 
-	(π model, price (Printer))
-π maker, model, price (Product ⨝ Devices)
+-- Find the makers, models, and prices of all offered devices.
+(π maker, model, price (Product ⨝ PC)) ∪
+(π maker, model, price (Product ⨝ Laptop)) 
 
 Exercise d)
 x1 = Product ⨝ mo1 = model (ρ mo1 ← model (PC))
@@ -65,9 +64,3 @@ x2 = π maker, price (x1)
 x3 = ρ m1 ← maker, p1 ← price  x2 
 x4 = ρ m2 ← maker, p2 ← price  x2 
 (π m1, p1 (x3 ⨯ x4)) - (π m1, p1 (σ m1 = m2 ∧ p1 < p2 (x3 ⨯ x4)))
-
-Exercise e) 
-PC1 = (ρ mo1 ← model, sp1 ← speed (PC))
-Laptop1 = (ρ mo2 ← model, sp2 ← speed (Laptop))
-equal = σ sp1 = sp2 (PC1 ⨯ Laptop1)
-π mo1, mo2 (equal)
