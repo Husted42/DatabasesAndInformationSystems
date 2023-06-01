@@ -51,6 +51,11 @@ Laptop1 = (ρ mo2 ← model, sp2 ← speed (Laptop))
 faster = σ sp1 < sp2 (PC1 ⨯ Laptop1)
 π mo1 (faster) 
 
+Exercise c)
+-- Find the makers, models, and prices of all offered devices.
+(π maker, model, price (Product ⨝ PC)) ∪
+(π maker, model, price (Product ⨝ Laptop)) 
+
 Exercise d)
 x1 = Product ⨝ mo1 = model (ρ mo1 ← model (PC))
 x2 = π maker, price (x1)
