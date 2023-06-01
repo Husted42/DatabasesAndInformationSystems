@@ -1,0 +1,22 @@
+Schemas:
+P(x:int, y:int, x:int)
+Q(x:int, y:int)
+R(x:int, y:int)
+
+
+Instances
+P
+(0,0,0)
+(1,1,1)
+(2,2,2)
+(3,2,1)
+
+Q
+(0,0)
+(1,1)
+(2,1)
+
+R
+(0,0)
+(2,2)
+(1,30)

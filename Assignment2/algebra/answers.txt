@@ -12,14 +12,17 @@ Exercise d)
 P ⨝ (π x (Q))
 
 Exercise e)
-(Q ∪ R) - Q ⨝ R
+Q - Q ⨝ R
 
 Exercise f)
+P - P ⨝ R
 
 Exercise g)
 Q-(π x2 ( ρ x2 ← x R)) ⨝ x1=x2 (π x1 ( ρ x1 ← x R))
 
 Exercise h)
+π x, y ((P⨝Q) ⨝ R)
+
 
 %%%%%% Exercise 2 %%%%%
 Exercise a)
