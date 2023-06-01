@@ -45,13 +45,13 @@ PC2 = (ρ mo2 ← model, sp2 ← speed, ra2 ← ram, hd2 ← hd, pr2 ← price (
 overpriced = σ mo1 ≠ mo2 ∧ pr1 > pr2 ∧ (sp1 < sp2 ∨ ra1 < ra2 ∨ hd1 < hd2) (PC1 ⨯ PC2)
 π mo1 (overpriced)
 
-Exercise b) MANGER MINUS
+Exercise b) (Not Finished) MANGER MINUS
 PC1 = (ρ mo1 ← model, sp1 ← speed (PC))
 Laptop1 = (ρ mo2 ← model, sp2 ← speed (Laptop))
 faster = σ sp1 < sp2 (PC1 ⨯ Laptop1)
 π mo1 (faster) 
 
-Exercise c)
+Exercise c) (Not Finished)
 -- Find the makers, models, and prices of all offered devices.
 (π maker, model, price (Product ⨝ PC)) ∪
 (π maker, model, price (Product ⨝ Laptop)) 
