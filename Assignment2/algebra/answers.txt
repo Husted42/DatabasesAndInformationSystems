@@ -65,3 +65,9 @@ x2 = π maker, price (x1)
 x3 = ρ m1 ← maker, p1 ← price  x2 
 x4 = ρ m2 ← maker, p2 ← price  x2 
 (π m1, p1 (x3 ⨯ x4)) - (π m1, p1 (σ m1 = m2 ∧ p1 < p2 (x3 ⨯ x4)))
+
+Exercise e) 
+PC1 = (ρ mo1 ← model, sp1 ← speed (PC))
+Laptop1 = (ρ mo2 ← model, sp2 ← speed (Laptop))
+equal = σ sp1 = sp2 (PC1 ⨯ Laptop1)
+π mo1, mo2 (equal)
