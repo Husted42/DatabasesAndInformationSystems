@@ -1,44 +1,3 @@
-%%%%%% Exercise 1.1 %%%%%
-Exercise a)
-P⨝Q
-
-Exercise b)
-Q⨝R
-
-Exercise c)
-π x, y, z (P) ∪ π z, y, x (P)
-
-Exercise d)
-P ⨝ (π x (Q))
-
-Exercise e)
-Q - Q ⨝ R
-
-Exercise f)
-P - P ⨝ R
-
-Exercise g)
-Q-(π x2 ( ρ x2 ← x R)) ⨝ x1=x2 (π x1 ( ρ x1 ← x R))
-
-Exercise h)
-π x, y ((P⨝Q) ⨝ R)
-
-%%%%%% Exercise 1.2 %%%%%
-Exercise a)
-Q(x1,y1) AND R(x2,y2)
-
-Exercise b)
-EXISTS y, z. P(x,y,z) AND (x=y OR x=z)
-
-Exercise c)
-EXISTS y1. Q(x2, x1) AND (R(x1,y1) AND x1=y1)
-
-Ecercise d)
-EXISTS x, y, z. P(x,y,z) AND
-((Q(x1,y1) OR R(x1,y1)) AND EXISTS y2. Q(x2, y2) AND x2 = x1) 
-AND x = x1 AND y = y1 AND z = x2
-
-
 %%%%%% Exercise 2 %%%%%
 Exercise a)
 PC1 = (ρ mo1 ← model, sp1 ← speed, ra1 ← ram, hd1 ← hd, pr1 ← price (PC))
@@ -53,8 +12,7 @@ faster = σ sp1 < sp2 (PC1 ⨯ Laptop1)
 notIN = π mo1 (faster) 
 (π model PC) - (ρ model←mo1 (notIN))
 
-Exercise c) (Not Finished)
-Exercise c) (Not Finished)
+Exercise c)
 Devices = 
 	(π model, price (PC)) ∪ 
 	(π model, price (Laptop)) ∪ 
@@ -73,3 +31,17 @@ PC1 = (ρ mo1 ← model, sp1 ← speed (PC))
 Laptop1 = (ρ mo2 ← model, sp2 ← speed (Laptop))
 equal = σ sp1 = sp2 (PC1 ⨯ Laptop1)
 π mo1, mo2 (equal)
+
+Exercise f)
+π model, price
+σ price > y (π model, price (Laptop) ⨯ (γ avg(price) → y (Laptop)))
+
+Exercise g)
+τ hd asc (γ hd; count(hd) → hdCount, avg(price) → avPrice (Product ⨝ PC))
+
+Exercise h)
+γ type; max(price)→max, min(price)→min (Printer)
+
+Exercise i)
+π model, (hd / (speed * speed)) → BMI (Laptop) ∪
+π model, (hd / (speed * speed)) → BMI (PC)
