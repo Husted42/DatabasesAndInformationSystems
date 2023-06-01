@@ -1,4 +1,4 @@
-%%%%%% Exercise 1 %%%%%
+%%%%%% Exercise 1.1 %%%%%
 Exercise a)
 P⨝Q
 
@@ -22,6 +22,18 @@ Q-(π x2 ( ρ x2 ← x R)) ⨝ x1=x2 (π x1 ( ρ x1 ← x R))
 
 Exercise h)
 π x, y ((P⨝Q) ⨝ R)
+
+%%%%%% Exercise 1.2 %%%%%
+Exercise a)
+Q(x1,y1) AND R(x2,y2)
+
+Exercise b)
+EXISTS y, z. P(x,y,z) AND (x=y OR x=z)
+
+Exercise c)
+
+Ecercise d)
+Union: Q(x,y) OR R(x,y)
 
 
 %%%%%% Exercise 2 %%%%%
