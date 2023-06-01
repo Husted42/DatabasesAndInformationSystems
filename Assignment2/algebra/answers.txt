@@ -33,7 +33,9 @@ EXISTS y, z. P(x,y,z) AND (x=y OR x=z)
 Exercise c)
 
 Ecercise d)
-Union: Q(x,y) OR R(x,y)
+EXISTS x, y, z. P(x,y,z) AND
+((Q(x1,y1) OR R(x1,y1)) AND EXISTS y2. Q(x2, y2) AND x2 = x1) 
+AND x = x1 AND y = y1 AND z = x2
 
 
 %%%%%% Exercise 2 %%%%%
