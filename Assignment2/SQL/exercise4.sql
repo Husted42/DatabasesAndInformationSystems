@@ -23,3 +23,13 @@ DELETE FROM Laptop WHERE Laptop.model IN(
 	AND product.maker NOT IN (SELECT maker FROM product WHERE type = 'printer')
 );
 
+-- d) Manufacturer A acquires manufacturer B. Change all of B’s products, so they are now made by A.
+UPDATE product
+SET maker = 'B'
+WHERE maker = 'A';
+
+-- e) For each PC, double the amount of RAM and add 60 gigabytes to the amount of hard disk
+
+
+
+
