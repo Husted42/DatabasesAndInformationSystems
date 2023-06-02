@@ -69,6 +69,7 @@ SELECT DISTINCT product.maker FROM product WHERE product.type = 'printer')
 GROUP BY maker;
 
 
+
 	
 
 
