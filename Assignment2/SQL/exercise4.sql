@@ -34,7 +34,7 @@ UPDATE laptop
 SET screen = screen + 1, price = price - 100
 WHERE model IN(
 	SELECT model FROM product WHERE maker = 'B'
-)
+);
 
 -- g) Enough! Delete all products!
 DROP TABLE IF EXISTS Product;
