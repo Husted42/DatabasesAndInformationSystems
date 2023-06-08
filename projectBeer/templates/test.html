@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for n in Breweries %}
+
+<div class="grid-container">
+    <div class="item1">
+        <img src="/static/assets/carlsberg.png" alt="logotitle" width="100%" height="100%">
+    </div>
+    <div class="item2">
+        <h1 style="font-size: 50px; text-align: center;"> 
+          <a href="{{ n[1] }}"> 
+            <div style="text-align: none; color: black; "> {{ n[1] }} </div>
+          </a> 
+        </h1>  <!-- Brewer Name -->
+    </div>
+    <div class="item3">
+        <p> <b> Location </b> <br> {{ n[2] }} </p>
+        <p> <b>Established: </b> <br> {{ n[3] }} </p>
+        <p id = "href"></p>
+    </div>  
+    <div class="item4">
+      {{ n[4] }}
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
