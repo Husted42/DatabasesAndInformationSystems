@@ -48,6 +48,78 @@ def Svaneke():
     conn.close()
     return render_template(brewery + '.html', beers = beers, imgLogo = imgLogo)
 
+@app.route('/Heineken')
+def Heineken():
+    #Variables
+    brewery = 'Heineken'
+    imgLogo = "/static/assets/" + brewery + ".png"
+    
+    #Setup database
+    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
+    conn = psycopg2.connect(db)
+
+    #SQL
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Beers WHERE brewery = '{}';".format(brewery))
+    beers = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template(brewery + '.html', beers = beers, imgLogo = imgLogo)
+
+@app.route('/Guinness')
+def Guinness():
+    #Variables
+    brewery = 'Guinness'
+    imgLogo = "/static/assets/" + brewery + ".png"
+    
+    #Setup database
+    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
+    conn = psycopg2.connect(db)
+
+    #SQL
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Beers WHERE brewery = '{}';".format(brewery))
+    beers = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template(brewery + '.html', beers = beers, imgLogo = imgLogo)
+
+@app.route('/Erdinger')
+def Erdinger():
+    #Variables
+    brewery = 'Erdinger'
+    imgLogo = "/static/assets/" + brewery + ".png"
+    
+    #Setup database
+    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
+    conn = psycopg2.connect(db)
+
+    #SQL
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Beers WHERE brewery = '{}';".format(brewery))
+    beers = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template(brewery + '.html', beers = beers, imgLogo = imgLogo)
+
+@app.route('/Mikkeller')
+def Mikkeller():
+    #Variables
+    brewery = 'Mikkeller'
+    imgLogo = "/static/assets/" + brewery + ".png"
+    
+    #Setup database
+    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
+    conn = psycopg2.connect(db)
+
+    #SQL
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Beers WHERE brewery = '{}';".format(brewery))
+    beers = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template(brewery + '.html', beers = beers, imgLogo = imgLogo)
+
 #Other
 @app.route('/')
 def home():
