@@ -17,7 +17,7 @@ $ pip install psycopg2
 ```
 After installing the modules and having all the files, set up your database in app.py 
 ```bash
-db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
+$ python3 app.py
 ```
 Run the files in sqlQueries in your database (pgadmin): 
 - createTables.sql 
