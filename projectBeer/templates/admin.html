@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+  <form action = "{{ url_for('addrec') }}" method = "POST">
+    <h3> Add new beers </h3>
+    Name of beer <br>
+    <input type="text" name = "nm" /><br>
+    Brewer of beer<br>
+    <input type="text" name = "brew" /><br>
+
+
+  </form>
+
+{% endblock content %}

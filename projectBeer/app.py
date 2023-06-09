@@ -119,9 +119,9 @@ def Mikkeller():
 def home():
     return render_template('home.html')
 
-@app.route("/about")
-def about():
-    return render_template('about.html')
+@app.route("/admin")
+def admin():
+    return render_template('admin.html')
 
 @app.route("/brewers")
 def brew():
