@@ -15,7 +15,7 @@ To deploy this project you need to have the modules
 $ pip install flask 
 $ pip install psycopg2
 ```
-After installing the modules and having all the files, set up the your database in app.py 
+After installing the modules and having all the files, set up your database in app.py 
 ```bash
 db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
 ```
