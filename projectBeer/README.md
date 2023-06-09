@@ -7,7 +7,7 @@ A beer database where you can learn more about the beers, their brewers, alc %, 
 - Sky Wong - lgz282
 
 ## Deployment
-To deploy this project run have the modules
+To deploy this project you need to have the modules
 - flask 
 - psycopg2
 
