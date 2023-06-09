@@ -23,7 +23,7 @@ Run the files in sqlQueries in your database (pgadmin):
 - createTables.sql 
 - insertData.sql
 - noteQueries.sql 
-_
+__
 Now you can acces the hopefully functioning web-app:) 
 
 ## Features
