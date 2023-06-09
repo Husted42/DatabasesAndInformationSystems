@@ -1,5 +1,5 @@
 # DIS Project - June '23
-A beer database where you can learn more about the beers, their brewers, alc %, history and description. Alongside the option to add new beers to the site/database. 
+A beer database where you can learn more about the beers, their brewers, alc %, history and description. Alongside the feature to add new beers to the site/database. 
 
 ## Authors
 - Alexander Husted - wqg282 
