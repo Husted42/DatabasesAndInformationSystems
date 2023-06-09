@@ -5,7 +5,7 @@ import psycopg2
 app = Flask(__name__)
 
 # set your own database
-#db = "dbname='bank' user='postgres' host='127.0.0.1' password = 'UIS'"
+db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
 
 
 ##### Routes #####
@@ -19,7 +19,6 @@ def carlsberg():
     imgLogo = "/static/assets/" + brewery + ".png"
     
     #Setup database
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
 
     #SQL
@@ -37,7 +36,6 @@ def Svaneke():
     imgLogo = "/static/assets/" + brewery + ".png"
     
     #Setup database
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
 
     #SQL
@@ -55,7 +53,6 @@ def Heineken():
     imgLogo = "/static/assets/" + brewery + ".png"
     
     #Setup database
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
 
     #SQL
@@ -73,7 +70,6 @@ def Guinness():
     imgLogo = "/static/assets/" + brewery + ".png"
     
     #Setup database
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
 
     #SQL
@@ -91,7 +87,6 @@ def Erdinger():
     imgLogo = "/static/assets/" + brewery + ".png"
     
     #Setup database
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
 
     #SQL
@@ -109,7 +104,6 @@ def Mikkeller():
     imgLogo = "/static/assets/" + brewery + ".png"
     
     #Setup database
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
 
     #SQL
@@ -131,7 +125,6 @@ def about():
 
 @app.route("/brewers")
 def brew():
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
     cur = conn.cursor()
     cur.execute('SELECT * FROM Breweries;')
@@ -142,7 +135,6 @@ def brew():
 
 @app.route("/test")
 def test():
-    db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
     conn = psycopg2.connect(db)
     cur = conn.cursor()
     cur.execute('SELECT * FROM Breweries;')
