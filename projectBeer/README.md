@@ -24,3 +24,8 @@ Run the files in sqlQueries in your database (pgadmin):
 - insertData.sql
 - noteQueries.sql 
 Now you can acces the hopefully functioning web-app:) 
+
+## Features
+- List of breweries
+    - List of beers that the breweries make
+- Add new beers 
