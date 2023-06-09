@@ -15,15 +15,15 @@ To deploy this project you need to have the modules
 $ pip install flask 
 $ pip install psycopg2
 ```
-After installing the modules and having all the files, set up your database in app.py 
-```bash
-$ python3 app.py
-```
 Run the files in sqlQueries in your database (pgadmin): 
 - createTables.sql 
 - insertData.sql
 - noteQueries.sql 
-<br />
+
+After installing the modules and having all the files, set up your database in app.py 
+```bash
+$ python3 app.py
+```
 Now you can acces the hopefully functioning web-app:) 
 
 ## Features
