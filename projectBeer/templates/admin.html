@@ -1,13 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-  <form action = "{{ url_for('addrec') }}" method = "POST">
+  <form method = "POST">
     <h3> Add new beers </h3>
     Name of beer <br>
-    <input type="text" name = "nm" /><br>
+    <input type="text" name = "nm" placeholder="nm" /><br>
     Brewer of beer<br>
-    <input type="text" name = "brew" /><br>
-
-
+    <input type="text" name = "brew" placeholder="brew" /><br>
+    Type of beer <br>
+    <input type="text" name = "type" placeholder="type" /><br>
+    Alcohol percent of beer <br>
+    <input type="text" name = "alc" placeholder="alc" /><br>
+    Description <br>
+    <textarea name = "desc" placeholder="desc"></textarea><br>
+    <input type = "submit" 
+    value = "submit" placeholder="submit"/><br>
   </form>
-
 {% endblock content %}

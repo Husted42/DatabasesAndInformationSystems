@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, redirect
 import psycopg2
 
 app = Flask(__name__)
+
 
 # set your own database
 db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
@@ -119,10 +120,6 @@ def Mikkeller():
 def home():
     return render_template('home.html')
 
-@app.route("/admin")
-def admin():
-    return render_template('admin.html')
-
 @app.route("/brewers")
 def brew():
     conn = psycopg2.connect(db)
@@ -142,6 +139,23 @@ def test():
     cur.close()
     conn.close()
     return render_template('test.html', Breweries = Breweries)
+
+
+@app.route("/admin", methods=('GET', 'POST'))
+def admin():
+    conn = psycopg2.connect(db)
+    cur = conn.cursor()
+    if request.method == 'POST':
+        nm = request.form['nm']
+        brew = request.form['brew']
+        typee = request.form['type']
+        alc = request.form['alc']
+        desc = request.form['desc']
+        cur.execute("INSERT INTO Beers(name, type, alc, description, brewery) VALUES ('{}', '{}', {}, '{}', '{}');".format(nm, typee, alc, desc, brew))
+        conn.commit()
+    return render_template('admin.html')
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
