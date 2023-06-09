@@ -20,7 +20,7 @@ Run the files in sqlQueries in your database (pgadmin):
 - insertData.sql
 - noteQueries.sql 
 
-After installing the modules and having all the files, set up your database in app.py 
+After installing the modules and having all the files, run app.py: 
 ```bash
 $ python3 app.py
 ```
