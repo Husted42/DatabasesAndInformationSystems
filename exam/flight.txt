@@ -22,6 +22,3 @@ Airport
 ("DXB Dubai", 1960)
 ("LAX Los Angeles", 1930)
 ("FRA Frankfurt", 1936)
-
-EXISTS ai, sp, re, se.
-Aircraft(ai, ty, sp, re, se) AND
