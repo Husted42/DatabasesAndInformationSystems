@@ -1,0 +1,27 @@
+Flight(flightNr:string, source:string, destination:string, duration:int, aircraftNr:int)
+Aircraft(aircraftNr:int, type:string, speed:float, registrationYear:int, seats:int)
+Airport(name:string, openedYear:int)
+
+Flight
+("FR4056", "JFK New York", "CDG Paris", 420, 1001)
+("EK215", "copenhagen", "LAX Los Angeles", 1020, 1010)
+("LH123", "FRA Frankfurt", "HND Tokyo", 690, 1020)
+("QF8", "SYD Sydney", "copenhagen", 915, 1030)
+("BA55", "LHR London", "JNB Johannesburg", 660, 1040)
+
+Aircraft
+(1001, "Boeing 747-8", 913.0, 2020, 467)
+(1010, "Airbus A380", 1020.0, 2021, 853)
+(1020, "Boeing 777", 905.0, 2022, 396)
+(1030, "Airbus A350", 945.0, 2023, 440)
+(1040, "Boeing 787", 913.0, 2021, 242)
+
+Airport
+("JFK New York", 1948)
+("CDG Paris", 1974)
+("DXB Dubai", 1960)
+("LAX Los Angeles", 1930)
+("FRA Frankfurt", 1936)
+
+EXISTS ai, sp, re, se.
+Aircraft(ai, ty, sp, re, se) AND

@@ -39,9 +39,6 @@ Exercise f)
 Exercise g)
 τ hd asc (γ hd; count(hd) → hdCount, avg(price) → avPrice (Product ⨝ PC))
 
-Exercise h)
-γ type; max(price)→max, min(price)→min (Printer)
-
 Exercise i)
 π model, (hd / (speed * speed)) → BMI (Laptop) ∪
 π model, (hd / (speed * speed)) → BMI (PC)
