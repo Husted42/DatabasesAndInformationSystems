@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 # set your own database
-db = "dbname='beers' user='postgres' host='127.0.0.1' password = 'password'"
+db = "dbname='postgres' user='postgres' host='127.0.0.1' password = 'vitus2001'"
 
 
 ##### Routes #####
