@@ -1,0 +1,18 @@
+Flight(flightNr:string, source:string, destination:string, duration:int, aircraftNr:int)
+Aircraft(aircraftNr:int, type:string, speed:float, registrationYear:int, seats:int)
+Airport(name:string, openedYear:int)
+
+3.1.1 Hvilke flytyper flyver til (destination) eller fra (source) København?
+EXISTS ai, sp, re, se, fl, so, de, du, ai.
+Aircraft(ai, ty, sp, re, se) AND
+(Flight(fl, so, de, du, ai) AND 
+(so = "copenhagen" OR de = "copenhagen"))
+
+π type σ source = 'copenhagen' OR destination = 'copenhagen' (Aircraft ⨝ Flight)
+
+SELECT type FROM Aircraft
+JOIN Flight ON Flight.aircraftNr = Aircraft.aircraftNr
+WHERE (destination = 'copenhagen' OR source = 'copenhagen')
+
+
+3.1.2
