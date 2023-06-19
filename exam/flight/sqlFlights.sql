@@ -33,7 +33,7 @@ INSERT INTO Aircraft VALUES (1001, 'Boeing 747-8', 913, 2020, 467);
 INSERT INTO Aircraft VALUES (1010, 'Airbus A380', 1020, 2021, 853);
 INSERT INTO Aircraft VALUES (1020, 'Boeing 777', 905, 2022, 396);
 INSERT INTO Aircraft VALUES (1030, 'Airbus A350', 945, 2023, 440);
-INSERT INTO Aircraft VALUES (1040, 'Boeing 787', 913, 2021, 242);
+INSERT INTO Aircraft VALUES (1040, 'Boeing 777', 913, 2021, 242);
 
 INSERT INTO Airport Values ('JFK New York', 1948);
 INSERT INTO Airport Values ('CDG Paris', 1974);
