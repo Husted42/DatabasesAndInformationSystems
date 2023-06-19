@@ -30,4 +30,16 @@ aircraftNr:number, type:string, speed:number, registrationYear:number, seats:num
 1020, "Boeing 777", 905.0, 2022, 396\
 1030, "Airbus A350", 945.0, 2023, 440\
 1040, "Boeing 787", 913.0, 2021, 242\
-\}}
+\}\
+\
+EXISTS ai, sp, re, se. Aircraft(ai, ty, sp, re, se)\
+AND NOT (EXISTS fl, so, de. \
+Flight(fl, so, "copenhagen", du, ai))\
+\
+EXISTS ai, sp, re, se. Aircraft(ai, ty, sp, re, se)\
+AND NOT\
+(EXISTS fl, src, du. Flight(fl, src, "copenhagen", du, ai))\
+\
+\
+\
+}
