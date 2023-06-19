@@ -15,4 +15,18 @@ JOIN Flight ON Flight.aircraftNr = Aircraft.aircraftNr
 WHERE (destination = 'copenhagen' OR source = 'copenhagen')
 
 
-3.1.2
+3.1.2 Hvilke flytyper er de hurtigste? 
+EXISTS ai1, sp1, re1, se1.
+Aircraft(ai1, ty1, sp1, re1, se1) AND NOT
+(EXISTS ai1, sp1, re1, se1, ai2, ty2, sp2, re2, se2.
+Aircraft(ai1, ty1, sp1, re1, se1) AND
+Aircraft(ai2, ty2, sp2, re2, se2) AND
+sp2 > sp1)
+
+maxVal = (γ max(speed) → speed (Aircraft))
+π type (Aircraft ⨝ maxVal)
+
+SELECT type FROM Aircraft WHERE speed IN(
+	SELECT MAX(speed) AS speed FROM Aircraft);
+
+3.1.3
