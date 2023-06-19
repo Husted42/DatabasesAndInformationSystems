@@ -1,0 +1,13 @@
+c) Find the model number and price of all products (of any type) made by manufacturer E
+EXISTS sp, ra, hd, sc, co, pty.
+Product("E", mo, ty) AND(
+PC(mo, sp, ra, hd, pr) OR
+Laptop(mo, sp, ra, hd, sc, pr) OR
+Printer(mo, co, pty, pr)
+)
+
+lap = π model, price (Laptop)
+PC_ = π model, price (PC)
+pri = π model, price (Printer)
+π model, price σ maker = 'E' (Product ⨝ (lap ∪ PC_ ∪ pri))
+
