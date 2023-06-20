@@ -3,7 +3,7 @@ Aircraft(aircraftNr:int, type:string, speed:float, registrationYear:int, seats:i
 Airport(name:string, openedYear:int)
 
 ----- 3.1 -----
-3.1.1 Hvilke flytyper flyver til (destination) eller fra (source) København?
+3.1.1) Hvilke flytyper flyver til (destination) eller fra (source) København?
 EXISTS ai, sp, re, se, fl, so, de, du, ai.
 Aircraft(ai, ty, sp, re, se) AND
 (Flight(fl, so, de, du, ai) AND 
@@ -16,7 +16,7 @@ JOIN Flight ON Flight.aircraftNr = Aircraft.aircraftNr
 WHERE (destination = 'copenhagen' OR source = 'copenhagen')
 
 
-3.1.2 Hvilke flytyper er de hurtigste? 
+3.1.2) Hvilke flytyper er de hurtigste? 
 EXISTS ai1, sp1, re1, se1.
 Aircraft(ai1, ty1, sp1, re1, se1) AND NOT
 (EXISTS ai1, sp1, re1, se1, ai2, ty2, sp2, re2, se2.
@@ -31,7 +31,7 @@ SELECT type FROM Aircraft WHERE speed IN(
 	SELECT MAX(speed) AS speed FROM Aircraft);
 
 ----- 3.2 -----
-3.2.1 Hvilke par af fly har samme type, men forskellige antal pladser. Et par skal være anført kun én gang
+3.2.1) Hvilke par af fly har samme type, men forskellige antal pladser. Et par skal være anført kun én gang
 EXISTS ty1, se1, re1, s1, ty2, se2, re2, s2.
 Aircraft(ai1, ty1, se1, re1, s1) AND 
 Aircraft(ai2, ty2, se2, re2, s2) AND
@@ -41,31 +41,31 @@ A1 = ρ a1 ← aircraftNr, ty1 ← type, sp1 ← speed, re1 ← registrationYear
 A2 = ρ a2 ← aircraftNr, ty2 ← type, sp2 ← speed, re2 ← registrationYear, s2 ← seats (Aircraft)
 π s1, s2 σ s1>s2 ∧ ty1 = ty2 (A1 ⨯ A2)
 
-3.2.2 Hvilke flytyper flyver ikke til (destination) København
+3.2.2) Hvilke flytyper flyver ikke til (destination) København
 (EXISTS fl, so, du, ai, sp, re, se.
 Flight(fl, so, de, du, ai) AND
 Aircraft(ai, ty, sp, re, se)) AND NOT 
 de = "copenhagen"
 
 ----- 4.1 -----
-4.1.1 Which airports were opened before 1925?
+4.1.1) Which airports were opened before 1925?
 EXISTS op. Airport(na, op) AND op < 1925
 
 π openedYear σ openedYear < 1925 (Airport)
 
-4.1.2 Which flights from Copenhagen to Zurich take longer than 120 (min)?
+4.1.2) Which flights from Copenhagen to Zurich take longer than 120 (min)?
 π flightNr σ source = 'copenhagen' ∧ destination = 'Zurich' ∧ duration > 120 (Flight)
 
-4.1.3 Which aircraft types fly from Copenhagen to Zurich and take longer than 120 and what is their speed?
+4.1.3) Which aircraft types fly from Copenhagen to Zurich and take longer than 120 and what is their speed?
 var = π aircraftNr σ source = 'copenhagen' ∧ destination = 'Zurich' ∧ duration > 120 (Flight)
 π type, speed (Aircraft⨝var)
 
 
 ----- 4.2 -----
-4.2.2 Hvor mange fly flyver til (destination) København
+4.2.2) Hvor mange fly flyver til (destination) København
 γ COUNT(aircraftNr) → num σ destination = 'copenhagen' (Flight)
 
-4.2.4 For hver flytype, der flyver fra (source) København, hvor mange fly af den type findes der
+4.2.4) For hver flytype, der flyver fra (source) København, hvor mange fly af den type findes der
 var = π aircraftNr σ destination = 'copenhagen' (Flight)
 γ type; COUNT(type) → c (Aircraft⨝var)
 
