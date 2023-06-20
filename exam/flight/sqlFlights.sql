@@ -1,6 +1,6 @@
-DROP TABLE Flight;
-DROP TABLE Aircraft;
-DROP TABLE Airport;
+DROP TABLE IF EXISTS Flight;
+DROP TABLE IF EXISTS Aircraft;
+DROP TABLE IF EXISTS Airport;
 
 CREATE TABLE Flight (
 	flightNr varchar(255),

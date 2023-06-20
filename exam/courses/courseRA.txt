@@ -1,0 +1,38 @@
+-- this is an example
+group: Courses
+
+Course = {
+courseID:number, title:string, compID:number, capacity:number, examForm:string
+101, "Intro to Computer Science", 1001, 200, "Written"
+102, "Advanced Mathematics", 1002, 150, "Online"
+103, "Physics", 1003, 100, "Oral"
+104, "English Literature", 1004, 120, "Written"
+105, "Biology", 1005, 180, "Online"
+}
+
+Student = {
+studentID:number, name:string, age:number, enrollYear:number
+501, "John Smith", 19, 2022
+502, "Emma Brown", 20, 2021
+503, "Oliver Johnson", 18, 2023
+504, "Sophia Williams", 21, 2020
+505, "Michael Davis", 22, 2019
+}
+
+Attends = {
+studentID:number, courseID:number, year:number, grade:number
+501, 101, 2023, 85
+502, 102, 2023, 90
+503, 103, 2023, 88
+504, 104, 2023, 92
+505, 105, 2023, 89
+}
+
+Competes = {
+studentID:number, compID:number, year:number, round:number, points:number
+501, 1001, 2023, 1, 85
+502, 1002, 2023, 2, 90
+503, 1003, 2023, 3, 88
+504, 1004, 2023, 2, 92
+505, 1005, 2023, 1, 89
+}
