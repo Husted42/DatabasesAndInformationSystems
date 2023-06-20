@@ -7,7 +7,7 @@ CREATE TABLE Course (
 	courseID INT,
 	title varchar(255),
 	compID INT,
-	capacity varchar(255),
+	capacity INT,
 	examForm varchar(255)
 );
 

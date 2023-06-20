@@ -45,3 +45,11 @@ Course(cid, "DIS", compid, m, e) AND Attends(sid, cid, y, g))
 π studentID, round, points σ title = 'DIS' ∧ year = 2022 (Course⨝Competes)
 
 ----- 4.2 -----
+4.2.1) How many different students attended "DIS" since 2020?
+γ COUNT(studentID) → y σ title = 'DIS' ∧ year ≥ 2020 (Attends⨝Course)
+
+4.2.2) For every year and every course (ID), what was the average grade of the attending students?
+γ courseID; AVG(grade) → y (Course⨝Attends)
+
+4.2.3) For every course (ID), what was the maximum number of students attending (per year)?
+γ courseID, year; COUNT(studentID) → y (Course⨝Attends)
