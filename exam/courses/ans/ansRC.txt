@@ -1,0 +1,55 @@
+Course(courseID:int, title:string, compID:int, capacity:int, examForm:string)
+Student(studentID:int, name:string, age:int, enrollYear:int)
+Attends(studentID:int, courseID:int, year:int, grade:int)
+Competes(studentID:int, compID:int, year:int, round:int, points:int)
+
+----- 3.1 -----
+3.1.1) What are the names of the students attending the "Physics" course in 2022?
+EXISTS courseID, compID, capacity, examForm, studentID, age, enrollYear, year, grade.
+Course(courseID, "Physics", compID, capacity, examForm) AND
+Student(studentID, name, age, enrollYear) AND
+Attends(studentID, courseID, year, grade)
+
+3.1.2) What are the titles of the courses, which at least one student had to repeat?
+EXISTS ye1, gr1, ye2, gr2, cid, std, co, ca, ex.
+Course(cid, ti, co, ca, ex) AND
+Attends(std, cid, ye1, gr1) AND
+Attends(std, cid, ye2, gr2) AND NOT
+ye1 = ye2
+
+3.1.3) What are the IDs of the students who have attended a course in some year but did not participate
+       in (any round of) the associated competition in the same year?
+EXISTS ti, ca, ex,  gr.
+Course(cid, ti, compID, ca, ex) AND
+Attends(sid, cid, ye, gr) AND
+(EXISTS ro, op.
+Competes(sid, compID, ye, ro, po))
+
+----- 3.2 -----
+3.2.1) What are the IDs of the students who have attended "MicroB" but have never attended "DIS" 
+(EXISTS cid, compid, m, e, y, g. 
+Course(cid, "MicroB", compid, m, e) AND Attends (sid, cid, y, g)) 
+AND NOT
+(EXISTS cid, compid, m, e, y, g. 
+Course(cid, "DIS", compid, m, e) AND Attends(sid, cid, y, g))
+
+----- 4.1 -----
+4.1.1) What are the IDs of students who have received at least one 12 in 2022?
+π courseID σ year = 2022 ∧ grade = 12 (Attends)
+
+4.1.2) What are the titles of courses with a capacity of 100 that do not have a written exam.
+π title σ capacity = 100 ∧ examForm = 'Written' (Course)
+
+4.1.3)What are the IDs of students competing in a DIS competition in 2022 and what are their points
+      in the individual competition rounds?
+π studentID, round, points σ title = 'DIS' ∧ year = 2022 (Course⨝Competes)
+
+----- 4.2 -----
+4.2.1) How many different students attended "DIS" since 2020?
+γ COUNT(studentID) → y σ title = 'DIS' ∧ year ≥ 2020 (Attends⨝Course)
+
+4.2.2) For every year and every course (ID), what was the average grade of the attending students?
+γ courseID; AVG(grade) → y (Course⨝Attends)
+
+4.2.3) For every course (ID), what was the maximum number of students attending (per year)?
+γ courseID, year; COUNT(studentID) → y (Course⨝Attends)

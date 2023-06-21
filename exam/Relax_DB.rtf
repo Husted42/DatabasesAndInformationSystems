@@ -1,0 +1,45 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Airport = \{\
+name:string, op:number\
+"JFK New York", 1948\
+"CDG Paris", 1974\
+"DXB Dubai", 1960\
+"LAX Los Angeles", 1930\
+"FRA Frankfurt", 1936\
+\}\
+\
+Flight = \{\
+flightNr:string, source:string, destination:string, duration:number, aircraftNr:number\
+"FR4056", "JFK New York", "CDG Paris", 420, 1001\
+"EK215", "copenhagen", "LAX Los Angeles", 1020, 1010\
+"LH123", "FRA Frankfurt", "HND Tokyo", 690, 1020\
+"QF8", "SYD Sydney", "copenhagen", 915, 1030\
+"BA55", "LHR London", "JNB Johannesburg", 660, 1040\
+\}\
+\
+Aircraft = \{\
+aircraftNr:number, type:string, speed:number, registrationYear:number, seats:number\
+1001, "Boeing 747-8", 913.0, 2020, 467\
+1010, "Airbus A380", 1020.0, 2021, 853\
+1020, "Boeing 777", 905.0, 2022, 396\
+1030, "Airbus A350", 945.0, 2023, 440\
+1040, "Boeing 787", 913.0, 2021, 242\
+\}\
+\
+EXISTS ai, sp, re, se. Aircraft(ai, ty, sp, re, se)\
+AND NOT (EXISTS fl, so, de. \
+Flight(fl, so, "copenhagen", du, ai))\
+\
+EXISTS ai, sp, re, se. Aircraft(ai, ty, sp, re, se)\
+AND NOT\
+(EXISTS fl, src, du. Flight(fl, src, "copenhagen", du, ai))\
+\
+\
+\
+}

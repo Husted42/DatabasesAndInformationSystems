@@ -1,0 +1,28 @@
+-- this is an example
+group: rcFlight
+
+Flight = {
+flightNr:string, source:string, destination:string, duration:number, aircraftNr:number
+"FR4056", "JFK New York", "CDG Paris", 420, 1001
+"EK215", "copenhagen", "LAX Los Angeles", 1020, 1010
+"LH123", "FRA Frankfurt", "HND Tokyo", 690, 1020
+"QF8", "SYD Sydney", "copenhagen", 915, 1030
+"BA55", "LHR London", "JNB Johannesburg", 660, 1040}
+
+Aircraft = {
+aircraftNr:number, type:string, speed:number, registrationYear:number, seats:number
+1001, "Boeing 747-8", 913, 2020, 467
+1010, "Airbus A380", 1020, 2021, 853
+1020, "Boeing 777", 905, 2022, 396
+1030, "Airbus A350", 945, 2023, 440
+1040, "Boeing 787", 913, 2021, 242
+}
+
+Airport = {
+name:string, openedYear:number
+"JFK New York", 1948
+"CDG Paris", 1974
+"DXB Dubai", 1960
+"LAX Los Angeles", 1930
+"FRA Frankfurt", 1936
+}
