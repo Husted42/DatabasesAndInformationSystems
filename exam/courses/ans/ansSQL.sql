@@ -34,4 +34,30 @@ SELECT courseID
 FROM Course WHERE capacity < (SELECT COUNT(DISTINCT studentID) FROM Attends
 							 WHERE Course.courseID = Attends.studentID AND year = 2022);
 
+-- 5.3.1
+-- Exmatriculate! Delete all students 
+-- (and the associated course attendance and competition participation data) that enrolled before 2014
+DELETE FROM Student;
 
+-- 5.3.2
+-- Bonus! Increase every student grade by 1
+UPDATE Attends SET grade = grade + 1;
+
+-- 5.3.3
+-- Competition bonus! Increase the grade by 1 for those students who have participated in the associated competition
+UPDATE Attends SET grade = grade + 1
+WHERE studentid IN (SELECT studentid FROM Competes);
+
+-- 5.3.4
+-- Create a view DIS_Attends for the students attending the latest "DIS" course.
+-- Note that the meaning of "latest" may change over time as data for the new course years arrives
+CREATE TABLE DIS_Attends AS 
+SELECT * FROM Attends WHERE courseid IN(
+	SELECT courseid FROM Course WHERE title = 'DIS'
+) AND year = 2023;
+SELECT * FROM DIS_Attends;
+
+-- 5.3.5
+-- COVID-19 is over: Change all "take-home" exam forms to "written"!
+UPDATE Course SET examform = 'written'
+WHERE examform = 'Online';

@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS Student;
 DROP TABLE IF EXISTS Attends;
 DROP TABLE IF EXISTS Competes;
+DROP TABLE IF EXISTS DIS_Attends;
 
 CREATE TABLE Course (
 	courseID INT,
@@ -35,7 +36,7 @@ CREATE TABLE Competes (
 
 INSERT INTO Course Values (101, 'Intro to Computer Science', 1001, 200, 'Written');
 INSERT INTO Course Values (102, 'Advanced Mathematics', 1002, 150, 'Online');
-INSERT INTO Course Values (103, 'Physics', 1003, 100, 'Oral');
+INSERT INTO Course Values (103, 'DIS', 1003, 100, 'Oral');
 INSERT INTO Course Values (104, 'English Literature', 1004, 120, 'Written');
 INSERT INTO Course Values (105, 'Biology', 1005, 180, 'Online');
 
